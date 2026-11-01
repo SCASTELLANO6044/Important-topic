@@ -52,3 +52,8 @@ button:active { filter: brightness(.9); }
 .confetti i:nth-child(4n) { width: 14px; height: 14px; border-radius: 0; clip-path: polygon(50% 22%, 65% 5%, 85% 5%, 100% 22%, 100% 43%, 50% 100%, 0 43%, 0 22%, 15% 5%, 35% 5%); }
 @media (max-width: 600px) { .heart-1 { left: 10%; top: 18%; width: 32px; height: 32px; } .heart-2 { right: 13%; top: 25%; } .heart-3 { right: 8%; top: 68%; width: 22px; height: 22px; } .heart-4 { left: 19%; bottom: 20%; } .heart-5 { right: 27%; bottom: 11%; width: 26px; height: 26px; } .heart-6 { left: 5%; top: 58%; } }
 
+.photo-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; width: min(100%, 620px); margin: 48px auto 0; }
+.photo-gallery > .tilted-card { aspect-ratio: 3 / 4; min-width: 0; }
+.photo-gallery .tilted-card__front { background: var(--background); box-shadow: 0 0 0 1px rgb(255 244 247 / 15%); }
+@media (max-width: 600px) { .proposal-page { padding-top: 56px; padding-bottom: 56px; } .photo-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 32px; } }
+

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Iridescence from "./Iridescence";
+import TiltedCard from "./TiltedCard";
 
 export default function Proposal() {
   const [noCount, setNoCount] = useState(0);
@@ -35,7 +36,8 @@ export default function Proposal() {
           <div className="answer">
             <svg className="heart" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28S3 20 3 10a7 7 0 0 1 13-3 7 7 0 0 1 13 3c0 10-13 18-13 18Z" /></svg>
             <h1 id="question" ref={headingRef} tabIndex={-1}>It’s a yes.</h1>
-            <p>You just made my day.</p>
+            <p>This is the best day of my lifeeeeee.</p>
+            <p>Let's be agile together ;).</p>
             <button className="replay" onClick={() => setCelebration(c => c + 1)}>Celebrate again</button>
           </div>
         ) : (
@@ -48,6 +50,18 @@ export default function Proposal() {
             <span className="sr-only" aria-live="polite">{noCount > 0 ? `The Yes button got bigger. ${noCount}` : ""}</span>
           </>
         )}
+        <div className="photo-gallery" role="group" aria-label="Photos of us">
+          {[
+            { src: "/photos/memory-1.webp", alt: "A selfie together on an ornate staircase" },
+            { src: "/photos/memory-2.webp", alt: "Watching a film together with our feet resting on a table" },
+            { src: "/photos/memory-3.webp", alt: "A kiss on the cheek on a day out together" },
+          ].map(photo => (
+            <TiltedCard key={photo.src} imageSrc={photo.src} altText={photo.alt}
+              containerWidth="100%" containerHeight="100%" imageWidth="100%" imageHeight="100%"
+              rotateAmplitude={8} scaleOnHover={1.025} glare={0.22} shadow={0.25} parallax={0.5}
+              radius={12} gyroscope={false} intro={false} showTooltip={false} />
+          ))}
+        </div>
       </section>
       {accepted && confettiVisible && (
         <div className="confetti" key={celebration} aria-hidden="true">
@@ -66,6 +80,7 @@ export default function Proposal() {
     </main>
   );
 }
+
 
 
 
