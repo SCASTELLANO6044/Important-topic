@@ -1,10 +1,10 @@
 :root {
   color-scheme: dark;
-  --background: #003d20;
-  --text: #faf8f0;
-  --ink: #153c28;
-  --button: #faf8f0;
-  --button-hover: #e6eadf;
+  --background: #542637;
+  --text: #fff4f7;
+  --ink: #653347;
+  --button: #fff4f7;
+  --button-hover: #f5dce5;
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--background); color: var(--text); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
@@ -14,7 +14,7 @@ button:focus-visible { outline: 2px solid var(--text); outline-offset: 6px; }
 .proposal-page { position: relative; isolation: isolate; display: grid; place-items: center; min-height: 100svh; min-height: 100dvh; overflow: clip; padding: max(40px, env(safe-area-inset-top)) 24px max(40px, env(safe-area-inset-bottom)); }
 .background, .background-shade { position: fixed; inset: 0; pointer-events: none; }
 .background { z-index: -2; background: var(--background); }
-.background-shade { z-index: -1; background: rgb(0 20 10 / 34%); }
+.background-shade { z-index: -1; background: rgb(30 6 20 / 38%); }
 .proposal { width: 100%; text-align: center; }
 h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(46px, 6.3vw, 88px); font-weight: 400; line-height: 1.12; letter-spacing: -0.045em; text-wrap: balance; }
 .actions { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 44px; }
@@ -41,4 +41,14 @@ button:active { filter: brightness(.9); }
 @keyframes arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 600px) { h1 { font-size: clamp(40px, 11.8vw, 64px); } .actions { margin-top: 36px; gap: 14px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .confetti i { top: var(--x); transform: rotate(var(--rotation)); opacity: .65; } }
+.hearts { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; color: #f8d0df; }
+.ambient-heart { position: absolute; fill: none; stroke: currentColor; stroke-width: 1; width: 30px; height: 30px; opacity: .4; }
+.heart-1 { left: 14%; top: 23%; transform: rotate(-18deg); width: 42px; height: 42px; }
+.heart-2 { right: 18%; top: 16%; transform: rotate(14deg); width: 20px; height: 20px; opacity: .5; }
+.heart-3 { right: 9%; top: 55%; transform: rotate(20deg); }
+.heart-4 { left: 23%; bottom: 17%; transform: rotate(12deg); width: 18px; height: 18px; opacity: .5; }
+.heart-5 { right: 27%; bottom: 22%; transform: rotate(-12deg); width: 38px; height: 38px; }
+.heart-6 { left: 7%; top: 60%; transform: rotate(-9deg); width: 16px; height: 16px; }
+.confetti i:nth-child(4n) { width: 14px; height: 14px; border-radius: 0; clip-path: polygon(50% 22%, 65% 5%, 85% 5%, 100% 22%, 100% 43%, 50% 100%, 0 43%, 0 22%, 15% 5%, 35% 5%); }
+@media (max-width: 600px) { .heart-1 { left: 10%; top: 18%; width: 32px; height: 32px; } .heart-2 { right: 13%; top: 25%; } .heart-3 { right: 8%; top: 68%; width: 22px; height: 22px; } .heart-4 { left: 19%; bottom: 20%; } .heart-5 { right: 27%; bottom: 11%; width: 26px; height: 26px; } .heart-6 { left: 5%; top: 58%; } }
 
