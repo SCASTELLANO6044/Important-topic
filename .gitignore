@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.openai/runtime/
+.env*
+
+.sites-publish/
+proposal-deploy.tar.gz
